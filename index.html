@@ -1,88 +1,187 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>PhotoConnect Privacy Policy</title>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhotoConnect</title>
+
     <style>
-      body {
-        max-width: 900px;
-        margin: auto;
-        padding: 40px;
-        font-family: Arial, sans-serif;
-        line-height: 1.8;
-      }
-      h1,
-      h2 {
-        color: #2c3e50;
-      }
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f7fa;
+            color: #222222;
+            font-family: Arial, "Noto Sans KR", sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: min(900px, calc(100% - 32px));
+            margin: 48px auto;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 48px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 42px;
+        }
+
+        .subtitle {
+            margin: 0 0 36px;
+            color: #666666;
+            font-size: 18px;
+        }
+
+        h2 {
+            margin-top: 36px;
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        .notice {
+            margin-top: 28px;
+            padding: 18px;
+            background: #fff4f1;
+            border-radius: 12px;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 10px;
+            background: #ffb4a2;
+            color: #222222;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .button.secondary {
+            background: #e8edf3;
+        }
+
+        .contact {
+            margin-top: 38px;
+            padding-top: 24px;
+            border-top: 1px solid #dddddd;
+        }
+
+        a {
+            color: #3367d6;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+            }
+
+            .card {
+                padding: 26px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <h1>PhotoConnect Privacy Policy</h1>
+<body>
+<div class="container">
+    <main class="card">
 
-    <p><strong>Last Updated:</strong> July 2026</p>
+        <h1>PhotoConnect</h1>
 
-    <p>
-      PhotoConnect is a photo printing application for compatible CS3 photo
-      printers. This application does not require user registration or login.
-    </p>
+        <p class="subtitle">
+            전용 CS3 포토프린터를 위한 Android 사진 출력 애플리케이션
+        </p>
 
-    <h2>Information We Collect</h2>
+        <h2>앱 소개</h2>
 
-    <p>The application may collect the following information:</p>
+        <p>
+            PhotoConnect는 Android 기기에 저장된 사진을 선택하여
+            호환되는 CS3 포토프린터로 출력할 수 있도록 지원하는 애플리케이션입니다.
+        </p>
 
-    <ul>
-      <li>Printer serial number</li>
-      <li>Application version</li>
-      <li>Android OS version</li>
-      <li>Printer authorization status</li>
-    </ul>
+        <h2>주요 기능</h2>
 
-    <p>
-      This information is collected only for printer authorization,
-      compatibility verification and troubleshooting.
-    </p>
+        <ul>
+            <li>Android 기기에서 사진 선택</li>
+            <li>USB를 통한 CS3 포토프린터 연결</li>
+            <li>사진 출력 매수 설정</li>
+            <li>인쇄 대기열 관리</li>
+            <li>프린터 시리얼 번호를 이용한 지원 프린터 확인</li>
+        </ul>
 
-    <h2>Photos</h2>
+        <h2>지원 프린터</h2>
 
-    <p>
-      Photos selected by the user remain on the device. They are never uploaded
-      to our servers.
-    </p>
+        <p>
+            현재 PhotoConnect는 등록 및 승인된 CS3 포토프린터를 지원합니다.
+        </p>
 
-    <h2>Third-party Services</h2>
+        <div class="notice">
+            출력 기능을 사용하려면 호환되는 CS3 포토프린터를
+            Android 기기에 USB로 연결해야 합니다.
+        </div>
 
-    <p>The application uses:</p>
+        <h2>개인정보 및 데이터</h2>
 
-    <ul>
-      <li>Firebase Remote Config</li>
-      <li>Firebase Firestore</li>
-    </ul>
+        <p>
+            사용자가 선택한 사진은 출력 목적으로만 기기 내부에서 처리되며
+            PhotoConnect 서버로 업로드되지 않습니다.
+        </p>
 
-    <p>
-      These services are used only to manage printer authorization and
-      application configuration.
-    </p>
+        <p>
+            프린터 지원 여부 확인과 문제 해결을 위해 프린터 시리얼 번호,
+            앱 버전 및 Android 버전과 같은 제한적인 기술 정보가 처리될 수 있습니다.
+        </p>
 
-    <h2>Advertising</h2>
+        <div class="links">
+            <a class="button" href="privacy.html">
+                개인정보처리방침
+            </a>
 
-    <p>
-      This application contains no advertisements and does not use the Android
-      Advertising ID.
-    </p>
+            <a class="button secondary" href="delete-data.html">
+                데이터 삭제 요청
+            </a>
+        </div>
 
-    <h2>Data Sharing</h2>
+        <section class="contact">
+            <h2>문의</h2>
 
-    <p>Collected information is never sold to third parties.</p>
+            <p>
+                개발자: DM Kim
+            </p>
 
-    <h2>Data Deletion</h2>
+            <p>
+                이메일:
+                <a href="mailto:pq0339@naver.com">
+                    pq0339@naver.com
+                </a>
+            </p>
+        </section>
 
-    <p>
-      If you would like any stored device-related data removed, please contact
-      the developer.
-    </p>
-
-    <p>Email: <b>pq0339@naver.com</b></p>
-  </body>
+    </main>
+</div>
+</body>
 </html>
