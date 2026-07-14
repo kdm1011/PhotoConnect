@@ -31,6 +31,32 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
 
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 18px;
+        }
+
+        .language-switch {
+            display: flex;
+            gap: 8px;
+        }
+
+        .language-button {
+            border: 1px solid #d5dbe3;
+            border-radius: 9px;
+            background: #ffffff;
+            padding: 8px 13px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .language-button.active {
+            background: #ffb4a2;
+            border-color: #ffb4a2;
+            font-weight: bold;
+        }
+
         h1 {
             margin: 0 0 10px;
             font-size: 42px;
@@ -90,6 +116,19 @@
             color: #3367d6;
         }
 
+        [data-lang] {
+            display: none;
+        }
+
+        [data-lang].active {
+            display: block;
+        }
+
+        span[data-lang].active,
+        a[data-lang].active {
+            display: inline;
+        }
+
         @media (max-width: 600px) {
             .container {
                 margin: 20px auto;
@@ -110,71 +149,153 @@
 <div class="container">
     <main class="card">
 
+        <div class="top-bar">
+            <div class="language-switch">
+                <button
+                    type="button"
+                    id="koButton"
+                    class="language-button active"
+                    onclick="setLanguage('ko')">
+                    한국어
+                </button>
+
+                <button
+                    type="button"
+                    id="enButton"
+                    class="language-button"
+                    onclick="setLanguage('en')">
+                    English
+                </button>
+            </div>
+        </div>
+
         <h1>PhotoConnect</h1>
 
-        <p class="subtitle">
+        <p class="subtitle active" data-lang="ko">
             전용 CS3 포토프린터를 위한 Android 사진 출력 애플리케이션
         </p>
 
-        <h2>앱 소개</h2>
-
-        <p>
-            PhotoConnect는 Android 기기에 저장된 사진을 선택하여
-            호환되는 CS3 포토프린터로 출력할 수 있도록 지원하는 애플리케이션입니다.
+        <p class="subtitle" data-lang="en">
+            An Android photo printing application for dedicated CS3 photo printers
         </p>
 
-        <h2>주요 기능</h2>
+        <section class="active" data-lang="ko">
+            <h2>앱 소개</h2>
 
-        <ul>
-            <li>Android 기기에서 사진 선택</li>
-            <li>USB를 통한 CS3 포토프린터 연결</li>
-            <li>사진 출력 매수 설정</li>
-            <li>인쇄 대기열 관리</li>
-            <li>프린터 시리얼 번호를 이용한 지원 프린터 확인</li>
-        </ul>
+            <p>
+                PhotoConnect는 Android 기기에 저장된 사진을 선택하여
+                호환되는 CS3 포토프린터로 출력할 수 있도록 지원하는 애플리케이션입니다.
+            </p>
 
-        <h2>지원 프린터</h2>
+            <h2>주요 기능</h2>
 
-        <p>
-            현재 PhotoConnect는 등록 및 승인된 CS3 포토프린터를 지원합니다.
-        </p>
+            <ul>
+                <li>Android 기기에서 사진 선택</li>
+                <li>USB를 통한 CS3 포토프린터 연결</li>
+                <li>사진 출력 매수 설정</li>
+                <li>인쇄 대기열 관리</li>
+                <li>프린터 시리얼 번호를 이용한 지원 프린터 확인</li>
+            </ul>
 
-        <div class="notice">
-            출력 기능을 사용하려면 호환되는 CS3 포토프린터를
-            Android 기기에 USB로 연결해야 합니다.
-        </div>
+            <h2>지원 프린터</h2>
 
-        <h2>개인정보 및 데이터</h2>
+            <p>
+                현재 PhotoConnect는 등록 및 승인된 CS3 포토프린터를 지원합니다.
+            </p>
 
-        <p>
-            사용자가 선택한 사진은 출력 목적으로만 기기 내부에서 처리되며
-            PhotoConnect 서버로 업로드되지 않습니다.
-        </p>
+            <div class="notice">
+                출력 기능을 사용하려면 호환되는 CS3 포토프린터를
+                Android 기기에 USB로 연결해야 합니다.
+            </div>
 
-        <p>
-            프린터 지원 여부 확인과 문제 해결을 위해 프린터 시리얼 번호,
-            앱 버전 및 Android 버전과 같은 제한적인 기술 정보가 처리될 수 있습니다.
-        </p>
+            <h2>개인정보 및 데이터</h2>
+
+            <p>
+                사용자가 선택한 사진은 출력 목적으로만 기기 내부에서 처리되며
+                PhotoConnect 서버로 업로드되지 않습니다.
+            </p>
+
+            <p>
+                프린터 지원 여부 확인과 문제 해결을 위해 프린터 시리얼 번호,
+                앱 버전 및 Android 버전과 같은 제한적인 기술 정보가 처리될 수 있습니다.
+            </p>
+        </section>
+
+        <section data-lang="en">
+            <h2>About the App</h2>
+
+            <p>
+                PhotoConnect allows users to select photos stored on an Android device
+                and print them using a compatible CS3 photo printer.
+            </p>
+
+            <h2>Main Features</h2>
+
+            <ul>
+                <li>Select photos from an Android device</li>
+                <li>Connect to a CS3 photo printer via USB</li>
+                <li>Set the number of print copies</li>
+                <li>Manage the print queue</li>
+                <li>Verify supported printers using the printer serial number</li>
+            </ul>
+
+            <h2>Supported Printers</h2>
+
+            <p>
+                PhotoConnect currently supports registered and authorized CS3 photo printers.
+            </p>
+
+            <div class="notice">
+                A compatible CS3 photo printer must be connected to the Android device
+                via USB to use the printing function.
+            </div>
+
+            <h2>Privacy and Data</h2>
+
+            <p>
+                Photos selected by the user are processed only on the device for printing
+                and are not uploaded to PhotoConnect servers.
+            </p>
+
+            <p>
+                Limited technical information, such as the printer serial number,
+                app version, and Android version, may be processed to verify printer
+                compatibility and assist with troubleshooting.
+            </p>
+        </section>
 
         <div class="links">
-            <a class="button" href="privacy.html">
+            <a class="button active" data-lang="ko" href="privacy.html">
                 개인정보처리방침
             </a>
 
-            <a class="button secondary" href="delete-data.html">
+            <a class="button" data-lang="en" href="privacy.html">
+                Privacy Policy
+            </a>
+
+            <a class="button secondary active" data-lang="ko" href="delete-data.html">
                 데이터 삭제 요청
+            </a>
+
+            <a class="button secondary" data-lang="en" href="delete-data.html">
+                Data Deletion Request
             </a>
         </div>
 
         <section class="contact">
-            <h2>문의</h2>
+            <h2 class="active" data-lang="ko">문의</h2>
+            <h2 data-lang="en">Contact</h2>
 
             <p>
-                개발자: DM Kim
+                <span class="active" data-lang="ko">개발자:</span>
+                <span data-lang="en">Developer:</span>
+                DM Kim
             </p>
 
             <p>
-                이메일:
+                <span class="active" data-lang="ko">이메일:</span>
+                <span data-lang="en">Email:</span>
+
                 <a href="mailto:pq0339@naver.com">
                     pq0339@naver.com
                 </a>
@@ -183,5 +304,42 @@
 
     </main>
 </div>
+
+<script>
+    function setLanguage(language) {
+        const languageElements = document.querySelectorAll("[data-lang]");
+
+        languageElements.forEach((element) => {
+            element.classList.toggle(
+                "active",
+                element.dataset.lang === language
+            );
+        });
+
+        document.getElementById("koButton").classList.toggle(
+            "active",
+            language === "ko"
+        );
+
+        document.getElementById("enButton").classList.toggle(
+            "active",
+            language === "en"
+        );
+
+        document.documentElement.lang = language;
+
+        localStorage.setItem("photoConnectLanguage", language);
+    }
+
+    const savedLanguage =
+        localStorage.getItem("photoConnectLanguage");
+
+    const browserLanguage =
+        navigator.language.toLowerCase().startsWith("ko")
+            ? "ko"
+            : "en";
+
+    setLanguage(savedLanguage || browserLanguage);
+</script>
 </body>
 </html>
